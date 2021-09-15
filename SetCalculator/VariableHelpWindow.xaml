@@ -1,0 +1,115 @@
+﻿<Window x:Class="SetCalculator.VariableHelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SetCalculator"
+        mc:Ignorable="d"
+        Title="Справка: объявление множеств" Height="560" Width="500"
+        WindowStartupLocation="CenterScreen">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="10*" MaxWidth="800"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Image
+            x:Name="BackgroundImage"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            Stretch="UniformToFill"
+            Source="Src/backgroundImage.jpg" RenderTransformOrigin="0.5, 0.5">
+
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform x:Name="ScaleTranslateTransform" ScaleX="1.2" ScaleY="1.2"></ScaleTransform>
+                </TransformGroup>
+            </Image.RenderTransform>
+
+            <Image.Effect>
+                <BlurEffect Radius="60"></BlurEffect>
+            </Image.Effect>
+        </Image>
+
+        <Rectangle
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            
+            Fill="Black"
+            Opacity="0.4">
+
+        </Rectangle>
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="1"
+            
+            Style="{StaticResource HeaderTextBlockStyle}"
+            Text="Объявление множеств">
+        </TextBlock>
+
+        <StackPanel
+            Orientation="Vertical"
+            Grid.Row="1"
+            Grid.Column="1">
+
+            <TextBlock Style="{StaticResource CommonTextBlockStyle}">
+                Объявление множеств в виде переменных позволяет
+                значительно упростить ввод выражений и работу с
+                большим количеством множеств или с повторяющимися 
+                большое количество раз множествами.
+            </TextBlock>
+
+            <TextBlock Style="{StaticResource CommonTextBlockStyle}">
+                Множество объявляется следующим образом:
+            </TextBlock>
+
+            <TextBlock 
+                Style="{StaticResource CommonTextBlockStyle}"
+                FontFamily="Courier New"
+                FontWeight="Bold">
+                
+                &lt;Имя_множества&gt; = { &lt;элемент_1&gt;, &lt;элемент_2&gt;, ... , &lt;элемент_N&gt; };
+            </TextBlock>
+
+            <TextBlock Style="{StaticResource CommonTextBlockStyle}">
+                Например:
+            </TextBlock>
+
+            <TextBlock 
+                Style="{StaticResource CommonTextBlockStyle}"
+                FontFamily="Courier New"
+                FontWeight="Bold">
+                
+                A = { 2, -1, 4, 8 };
+                <LineBreak/>
+                Simple7 = { 1, 2, 3, 5, 7, 11, 13 };
+                <LineBreak/>
+                float = { 0.345, 1.2, -78.51 };
+                <LineBreak/>
+                EmptyLot = {};
+            </TextBlock>
+
+            <TextBlock Style="{StaticResource CommonTextBlockStyle}">
+                1. Имена переменных множеств регистрозависимы;
+                <LineBreak/>
+                a и A - разные множества
+                <LineBreak/>
+                2. U - Универсум, который не обязательно объявлять явно; 
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>

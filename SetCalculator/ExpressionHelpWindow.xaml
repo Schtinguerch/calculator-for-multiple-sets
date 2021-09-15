@@ -1,0 +1,114 @@
+﻿<Window x:Class="SetCalculator.ExpressionHelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SetCalculator"
+        mc:Ignorable="d"
+        Title="Справка: выражения с множествами" Height="550" Width="550"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="10*" MaxWidth="800"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Image
+            x:Name="BackgroundImage"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            Stretch="UniformToFill"
+            Source="Src/backgroundImage.jpg" RenderTransformOrigin="0.5, 0.5">
+
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform x:Name="ScaleTranslateTransform" ScaleX="1.2" ScaleY="1.2"></ScaleTransform>
+                </TransformGroup>
+            </Image.RenderTransform>
+
+            <Image.Effect>
+                <BlurEffect Radius="60"></BlurEffect>
+            </Image.Effect>
+        </Image>
+
+        <Rectangle
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            
+            Fill="Black"
+            Opacity="0.4">
+
+        </Rectangle>
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="1"
+            
+            Style="{StaticResource HeaderTextBlockStyle}"
+            Text="Выражения с множествами">
+        </TextBlock>
+
+        <StackPanel
+            Orientation="Vertical"
+            Grid.Row="1"
+            Grid.Column="1">
+
+            <TextBlock Style="{StaticResource CommonTextBlockStyle}">
+                Отдельный блок с выражением позволяет упростить
+                работу с большими множествами, использовать одно 
+                и то же множество неограниченное количество раз и
+                абстрагироваться от элементов множеств.
+            </TextBlock>
+
+            <TextBlock Style="{StaticResource CommonTextBlockStyle}">
+                Система поддерживает следующий список операторов:
+            </TextBlock>
+
+            <TextBlock Style="{StaticResource CommonTextBlockStyle}">
+                1. Объединение (unite, unt, +, ∪ )
+                <LineBreak/>
+                2. Пересечение (intersect, itr, *, ∩ )
+                <LineBreak/>
+                3. Разность (difference, dif, \, ∖ )
+                <LineBreak/>
+                4. Симм. разность (symmetric, sym, #, ∆)
+            </TextBlock>
+
+            <TextBlock Style="{StaticResource CommonTextBlockStyle}">
+                Пример выражения U ∖ (A ∩ B):
+            </TextBlock>
+
+            <TextBlock 
+                Style="{StaticResource CommonTextBlockStyle}"
+                FontFamily="Courier New"
+                FontWeight="Bold">
+                
+                U difference (A intersect B)
+                <LineBreak/>
+                U dif (A itr B)
+                <LineBreak/> 
+                U \ (A * B)
+                <LineBreak/>
+                U ∖ (A ∩ B)
+            </TextBlock>
+
+            <TextBlock Style="{StaticResource CommonTextBlockStyle}">
+                Можно использовать любой удобный способ 
+                наименования операторов.
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>

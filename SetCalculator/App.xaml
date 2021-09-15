@@ -1,0 +1,15 @@
+﻿<Application x:Class="SetCalculator.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SetCalculator"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Src/TextBlockStyleDictionary.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Src/TextBoxStyleDictionary.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Src/ButtonStyleDictionary.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
